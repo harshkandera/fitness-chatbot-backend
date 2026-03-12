@@ -13,7 +13,7 @@ app.use(
   cors({
     origin:
       process.env.FRONTEND_URL ??
-      "https://fitness-chatbot-frontend.vercel.app/",
+      "https://fitness-chatbot-frontend.vercel.app",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   }),
