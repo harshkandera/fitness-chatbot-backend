@@ -11,10 +11,12 @@ const PORT = process.env.PORT ?? 4000;
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
+    origin:
+      process.env.FRONTEND_URL ??
+      "https://fitness-chatbot-frontend.vercel.app/",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
-  })
+  }),
 );
 app.use(express.json());
 
@@ -33,7 +35,9 @@ async function bootstrap(): Promise<void> {
     console.log(`\n🚀 Fitness Coach API running on http://localhost:${PORT}`);
     console.log(`   Health check: http://localhost:${PORT}/health`);
     console.log(`   Chat:         POST http://localhost:${PORT}/api/chat`);
-    console.log(`   Progress:     GET/POST http://localhost:${PORT}/api/progress\n`);
+    console.log(
+      `   Progress:     GET/POST http://localhost:${PORT}/api/progress\n`,
+    );
   });
 }
 
